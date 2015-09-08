@@ -23,13 +23,9 @@ public class UserServiceTest {
 	private UserService userService = BeanHelper.getBean(UserServiceImpl.class);
 
 	@BeforeClass
-	public static void init() {
-		DatabaseHelper.initSQL("sql/user_init.sql");
-	}
-
 	@AfterClass
-	public static void clear() {
-		DatabaseHelper.initSQL("sql/user_clear.sql");
+	public static void init() {
+		DatabaseHelper.initSQL("sql/user.sql");
 	}
 
 	@Test

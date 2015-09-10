@@ -24,7 +24,7 @@ public class UserAction {
 	public View index() {
 		List<User> userList = userService.findUserList();
 		DataContext.Request.put("userList", userList);
-		return new View("user.jsp");
+		return new View("user_list.jsp");
 	}
 
 	@Request.Get("/user")
@@ -32,6 +32,7 @@ public class UserAction {
 		return new View("user_create.jsp");
 	}
 
+	@Request.Post("/user")
 	public Result save(Params params) {
 		Map<String, Object> fieldMap = params.getFieldMap();
 		boolean result = userService.saveUser(fieldMap);

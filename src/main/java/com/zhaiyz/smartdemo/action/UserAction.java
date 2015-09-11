@@ -46,7 +46,7 @@ public class UserAction {
 		return new View("user_edit.jsp");
 	}
 
-	@Request.Put("/user/${id}")
+	@Request.Put("/user/{id}")
 	public Result update(long id, Params params) {
 		Map<String, Object> fieldMap = params.getFieldMap();
 		boolean result = userService.updateUser(id, fieldMap);
